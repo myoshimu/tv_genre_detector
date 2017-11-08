@@ -1,0 +1,174 @@
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="TV Genre prediction tool that helps you add insight to TV attribution analysis.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>TV Genre detector</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/static/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="/static/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/static/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="/static/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" /> 
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <h3>TV Genre Detector</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#overview" class="mdl-layout__tab is-active">GETTING STARTED</a>
+          <a href="#faq" class="mdl-layout__tab">FAQ</a>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
+            <div class="mdl-card mdl-cell mdl-cell--12-col-desktop">
+              <div class="mdl-card__supporting-text">
+                <h4>Getting Started!</h4>
+                ファイルをアップロードしてください　
+                <form action="" method=post enctype=multipart/form-data>
+                  <!--style>#file { display: none; }</style>
+                  <label class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                      UPLOAD
+                  </label--><input type="file" name="file">
+                  <input type=submit value=Upload>
+                </form>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#howto" class="mdl-button">How to use</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div id="howto" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">使い方</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>ファイルを準備する</h5>
+                  Programという列名を含むCSV形式のTV視聴率ファイルを準備ください。 <a href="https://docs.google.com/a/google.com/spreadsheets/d/1ibbqk-DFCDO2EoxHQUo7OvIDar0mkXnWqkaQUM8trzU/edit?usp=sharing">data format</a>.
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>ファイルをアップロードする</h5>
+                  ファイルをアップロードしてしばらく待ちます。
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>結果がダウンロードできたら成功です</h5>
+                  「Genre」という列名が追加されたCSVが生成されていることを確認ください。
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Technology</h4>
+                TV Genre Detectorは過去2年間のTVデータベースより、約2000件のデータとマッチングを行なっています。データベースに存在しない番組は、MeCabによる形態素解析とGoogle Prediction APIの予測によってジャンルを特定しています。
+              </div>
+
+            </div>
+
+          </section>
+        </div>
+
+
+
+        <div class="mdl-layout__tab-panel" id="faq">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <h4>FAQ</h4>
+              データがカンマ区切りCSVになっていること、Programという列名を含んでいることを事前に確認ください。
+              <ul class="toc">
+                <h4>Contents</h4>
+                <a href="#lorem1">データについて</a>
+                <a href="#lorem2">APIエラーになります</a>
+              </ul>
+
+              <h5 id="lorem1">データについて</h5>
+              
+              <ul>
+                <li>どんなデータがあればいいの？</li>
+                <li>APIエラーになります</li>
+              </ul>
+              <p>
+                Date,Time,Network,Impressions,Cost*,Creative,Duration,Program,Geo（日付、時間、TV局、インプレッション、費用、広告、広告の時間（分単位）、番組、地域データ）が必要です。カンマ区切りのUTF-8で入力してください。
+              </p>
+              <p id="lorem2">
+                APIの1日あたりリクエスト数を超過している可能性があります。kmiki@google.comまで連絡ください。
+              </p>
+
+            </div>
+          </section>
+        </div>
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+              More Information
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+              <li><a href="http://go/tva-jp">TV Attribution Portal</a></li>
+              <li><a href="mailto:kmiki@google.com">Contact Author</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <a href="https://github.com/myoshimu/tv_genre_detector" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
